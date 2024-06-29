@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7 Design the grid</title>
+    <style>
+      /* Reset default browser styles */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+      }
+
+      /* Global styles */
+      body {
+        /* background-color: thistle; */
+        /* background: repeating-conic-gradient(  thistle 30% , pink 70%); */
+        background: linear-gradient(whitesmoke, #dfdfdf); 
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        background-color: whitesmoke;
+      }
+
+      h1,
+      .brand {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      /* Content */
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50vh;
+        padding: 100px 200px;
+      }
+
+      .hero {
+        height: 60vh;
+        width: 100%;
+        /* background-color: wheat; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+      p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+      }
+      .hero > p {
+        /* margin-top: 60px; */
+        font-size: 4rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+      }
+      .hero h3 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        color: black;
+      }
+
+      .boxes {
+        display: grid;
+        /* background-color: grey; */
+        min-height: auto;
+        gap: 20px 30px;
+        grid-template-columns: 1fr auto auto;
+        grid-template-rows: auto;
+        /* position: relative;
+        top: 20px; */
+        width: auto;
+      }
+      .box {
+        height: 190px;
+        width: 350px;
+        background-color: whitesmoke;
+        border-radius: 10px;
+      }
+
+      footer{
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 200px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 200px;
+        background-color: whitesmoke;
+      }
+      .footer {
+        float: left;
+        width: 80%;
+      }
+      .socials * {
+        font-size: 2rem;
+        margin: auto 6px;
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .brand {
+          margin-bottom: 20px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        nav ul li {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+
+        .boxes {
+          grid-template-columns: auto;
+        }
+        .hero > p {
+          width: 400px;
+        }
+        .hero h3 {
+          width: 400px;
+        }
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <!-- Design the body of this website -->
+    <!-- Website :- Ultraedit -->
+    <header>
+      <div class="container">
+        <h1 class="brand">Ultraedit</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <div class="hero">
+        <p>
+          Download
+          <span style="color: black; font-weight: 900">Ultradedit</span> for
+          Windows
+        </p>
+        <h3>
+          Download and try Ultraedit before you buy it! This download includes
+          the full Windows version of the text editor
+        </h3>
+        <a href="app.exe">
+          <button class="button button2" role="button" style="font-size: larger;">
+            <span class="text" >Download Mac or Linux Version</span
+            ><span>Download now!</span>
+          </button>
+        </a>
+      </div>
+    </section>
+    <main>
+      <div class="boxes">
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">English</h1>
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">Deutsch</h1>
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">Italiano</h1>
+
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">Espanol</h1>
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">Francais</h1>
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-content">
+            <h1 style="text-align: center; margin-top: 20px">Portugues</h1>
+            <div class="button-container" style="display: flex">
+              <a href="app.exe">
+                <button class="button button1" role="button">
+                  <span class="text">Ultraedit 32-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+              <a href="app.exe">
+                <button class="button button2" role="button">
+                  <span class="text">Ultraedit 64-bit</span
+                  ><span>Download now!</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="brand">UltraEdit</div>
+        <p>©2024 Froggie. All rights reserved</p>
+      </div>
+      <div class="socials">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-x"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+    </footer>
+
+
+  </body>
+</html>
